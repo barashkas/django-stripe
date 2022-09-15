@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TEST BUY WITH STRIPE</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+        <script src="https://js.stripe.com/v3/"></script>
+    </head>
+    <body>
+        <section>
+            <div class="product">
+                <table style="border:1px solid black;background:Peru;">
+                	<tbody>
+                		<tr>
+                			<td rowspan="3">
+                    			<img src="https://seeklogo.com/images/1/182-brindes-logo-F1481BDC4A-seeklogo.com.png" alt="Item Image Logo" style="width:250px;height:auto;"/>
+                			</td>
+                			<td colspan="2">
+                    			<h1 style="color:Bisque; font-size:42px; text-align:center;">Try our coffee!</h1>
+                    			<h1>{{ product.name }}</h1>
+                			</td>
+                		</tr>
+                		<tr>
+                			<td colspan="2">
+                    			<!--
+                    			<h3>Inhale the magical aroma of our coffee <br> and feel closer to your dream</h3>
+                    			-->
+								<h3>{{ product.description }}</h3>
+                			</td>
+                		</tr>
+                		<tr>
+                			<td>
+                    			<h5 style="font-size:16px; text-align:right;">Price: ${{ product.get_display_price }}</h5>
+                			</td>
+                			<td>
+                    			<form action="/buy/{{ product.id }}" method="GET">
+                                   <button  type="submit" id="checkout-button" style="float:right; padding:20px;">Checkout</button>
+                                </form>
+                                <!--<button type="button" id="checkout-button" style="float:right; padding:20px;">Checkout</button>-->
+                			</td>
+                		</tr>
+                	</tbody>
+                </table>
+            </div>
+        </section>
+    </body>
+
+</html>
